@@ -9,6 +9,7 @@ using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
 using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
+using testmodule.Modules;
 
 namespace testmodule
 {
@@ -44,6 +45,7 @@ namespace testmodule
                     db.UseSqlite(Configuration.GetConnectionString("piranha")));
                 options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
                     db.UseSqlite(Configuration.GetConnectionString("piranha")));
+                options.UseListModule();
             });
         }
 

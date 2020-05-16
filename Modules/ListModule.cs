@@ -53,15 +53,15 @@ namespace testmodule.Modules
             // Register permissions
             foreach (var permission in _permissions)
             {
-                App.Permissions["ListModule"].Add(permission);
+                App.Permissions["PiranhaModule"].Add(permission);
             }
 
             // Add manager menu items
-            Menu.Items["ListModule"].Items.Add(new MenuItem
+            Menu.Items["PiranhaModule"].Items.Add(new MenuItem
             {
                 InternalId = "ListModule",
-                Name = "ListModule",
-                Route = "~/manager/ListModule",
+                Name = "PiranhaModule",
+                Route = "~/manager/PiranhaModule",
                 Policy = Permissions.ListModule,
                 Css = "fas fa-box"
             });
