@@ -28,7 +28,7 @@ namespace testmodule.Modules
         /// </summary>
         /// <param name="applicationBuilder">The current application builder</param>
         /// <returns>The builder</returns>
-        public static PiranhaApplicationBuilder UseJellyfish(this PiranhaApplicationBuilder applicationBuilder)
+        public static PiranhaApplicationBuilder UseListModule(this PiranhaApplicationBuilder applicationBuilder)
         {
             applicationBuilder.Builder.UseListModule();
 
@@ -48,28 +48,28 @@ namespace testmodule.Modules
             // Setup authorization policies
             services.AddAuthorization(o =>
             {
-                // ListModule policies
-                o.AddPolicy(Permissions.ListModule, policy =>
+            // ListModule policies
+            o.AddPolicy(Permissions.ListModule, policy =>
                 {
                     policy.RequireClaim(Permissions.ListModule, Permissions.ListModule);
                 });
 
-                // ListModule add policy 
-                o.AddPolicy(Permissions.ListModuleAdd, policy =>
+            // ListModule add policy
+            o.AddPolicy(Permissions.ListModuleAdd, policy =>
                 {
                     policy.RequireClaim(Permissions.ListModule, Permissions.ListModule);
                     policy.RequireClaim(Permissions.ListModuleAdd, Permissions.ListModuleAdd);
                 });
 
-                // ListModule edit policy 
-                o.AddPolicy(Permissions.ListModuleEdit, policy =>
+            // ListModule edit policy
+            o.AddPolicy(Permissions.ListModuleEdit, policy =>
                 {
                     policy.RequireClaim(Permissions.ListModule, Permissions.ListModule);
                     policy.RequireClaim(Permissions.ListModuleEdit, Permissions.ListModuleEdit);
                 });
 
-                // ListModule delete policy 
-                o.AddPolicy(Permissions.ListModuleDelete, policy =>
+            // ListModule delete policy
+            o.AddPolicy(Permissions.ListModuleDelete, policy =>
                 {
                     policy.RequireClaim(Permissions.ListModule, Permissions.ListModule);
                     policy.RequireClaim(Permissions.ListModuleDelete, Permissions.ListModuleDelete);
