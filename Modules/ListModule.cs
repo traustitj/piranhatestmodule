@@ -21,12 +21,12 @@ namespace testmodule.Modules
         /// <summary>
         /// Gets the module author
         /// </summary>
-        public string Author => "";
+        public string Author => "Trausti Thor Johannsson";
 
         /// <summary>
         /// Gets the module name
         /// </summary>
-        public string Name => "";
+        public string Name => "ListModule";
 
         /// <summary>
         /// Gets the module version
@@ -36,7 +36,7 @@ namespace testmodule.Modules
         /// <summary>
         /// Gets the module description
         /// </summary>
-        public string Description => "";
+        public string Description => "Small list module for Piranha CMS";
 
         /// <summary>
         /// Gets the module package url
@@ -46,7 +46,7 @@ namespace testmodule.Modules
         /// <summary>
         /// Gets the module icon url
         /// </summary>
-        public string IconUrl => "/manager/PiranhaModule/piranha-logo.png";
+        public string IconUrl => "http://piranhacms.org/assets/twitter-shield.png";
 
         public void Init()
         {
@@ -55,16 +55,22 @@ namespace testmodule.Modules
             {
                 App.Permissions["ListModule"].Add(permission);
             }
-
-            // Add manager menu items
-            Menu.Items["ListModule"].Items.Add(new MenuItem
+            Menu.Items.Insert(2, new MenuItem
             {
                 InternalId = "ListModule",
-                Name = "PiranhaModule",
-                Route = "~/manager/ListModule",
-                Policy = Permissions.ListModule,
-                Css = "fas fa-box"
+                Name = "List Manager",
+                Css = "fas fa-fish"
             });
+
+                // Add manager menu items
+                Menu.Items["ListModule"].Items.Add(new MenuItem
+                {
+                    InternalId = "ListModule",
+                    Name = "List module",
+                    Route = "~/manager/ListModule",
+                    Policy = Permissions.ListModule,
+                    Css = "fas fa-box"
+                });
         }
     }
 }

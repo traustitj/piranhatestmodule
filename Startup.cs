@@ -45,8 +45,9 @@ namespace testmodule
                     db.UseSqlite(Configuration.GetConnectionString("piranha")));
                 options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
                     db.UseSqlite(Configuration.GetConnectionString("piranha")));
-                options.UseListModule();
+                // options.UseListModule();
             });
+            services.AddListModule();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
