@@ -9,6 +9,7 @@ using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
 using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
+using testmodule.EFModels;
 using testmodule.Modules;
 
 namespace testmodule
@@ -48,6 +49,7 @@ namespace testmodule
                 // options.UseListModule();
             });
             services.AddListModule();
+            services.AddDbContext<NameContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

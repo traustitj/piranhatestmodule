@@ -66,8 +66,8 @@ namespace testmodule.Modules
                 Menu.Items["ListModule"].Items.Add(new MenuItem
                 {
                     InternalId = "ListModule",
-                    Name = "List module",
-                    Route = "~/manager/ListModule",
+                    Name = "List Manager",
+                    Route = "~/manager/List",
                     Policy = Permissions.ListModule,
                     Css = "fas fa-box"
                 });
